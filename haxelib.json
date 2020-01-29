@@ -11,7 +11,7 @@
     "CrazyFlasher", 
     "PrimaryFeather"
   ],
-  "classPath": "",
+  "classPath": "src",
   "dependencies": {
   }
 }
