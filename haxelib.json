@@ -1,0 +1,17 @@
+{
+  "name": "starling-extensions-hx",
+  "url": "https://github.com/CrazyFlasher/starling-extensions-hx",
+  "license": "MIT",
+  "tags": [
+  ],
+  "description": "Starling Extensions",
+  "version": "0.0.1",
+  "releasenote": "Added God Rays effect",
+  "contributors": [
+    "CrazyFlasher", 
+    "PrimaryFeather"
+  ],
+  "classPath": "",
+  "dependencies": {
+  }
+}

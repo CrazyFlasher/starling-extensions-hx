@@ -6,8 +6,8 @@
 	
 	<window background="0" fps="0" width="1800" height="1198"/>
 
+	<source path="samples/src" />
 	<source path="src" />
-	<source path="GodRays/src" />
 
 	<haxelib name="starling" />
 	<haxelib name="openfl" />
