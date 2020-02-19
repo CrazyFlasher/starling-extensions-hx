@@ -2,16 +2,16 @@
 <project>
 	
 	<meta title="Starling Extensions Demo" package="com.crazyflasher.starlingext.demo" version="1.0.0" company="OpenFL" />
-	<app main="Main" file="Main" path="bin" />
+	<app main="Main" file="Main" path="../../export/textureMask" />
 	
-	<window background="0" fps="0" width="1800" height="1198"/>
+	<window background="0" fps="0" width="800" height="600"/>
 
-	<source path="samples/src" />
-	<source path="src" />
+	<source path="./" />
+	<source path="../../src" />
 
 	<haxelib name="starling" />
 	<haxelib name="openfl" />
 
-	<assets path="assets" embed="false" preload="false"/>
+	<assets path="../assets" rename="assets" embed="true" preload="true"/>
 
 </project>

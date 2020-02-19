@@ -17,10 +17,6 @@ class Main extends openfl.display.Sprite
     {
         super();
 
-        #if html5
-        js.Lib.debug();
-        #end
-
         init();
     }
 

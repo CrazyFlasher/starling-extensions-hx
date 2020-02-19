@@ -1,4 +1,3 @@
-package
 import starling.events.KeyboardEvent;
 import openfl.geom.Point;
 import starling.events.Touch;
@@ -8,10 +7,10 @@ import starling.events.TouchEvent;
 import starling.assets.AssetManager;
 import starling.core.Starling;
 import starling.display.Image;
-import starling.display.Sprite3D;
+import starling.display.Sprite;
 import starling.extensions.GodRayPlane;
 
-class Demo extends Sprite3D
+class Demo extends Sprite
 {
     private var _godRays:GodRayPlane;
 

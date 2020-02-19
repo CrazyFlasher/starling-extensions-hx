@@ -2,7 +2,7 @@
 <project>
 	
 	<meta title="Starling Extensions Demo" package="com.crazyflasher.starlingext.demo" version="1.0.0" company="OpenFL" />
-	<app main="Main" file="Main" path="../bin/pixelMask" />
+	<app main="Main" file="Main" path="../../export/pixelMask" />
 	
 	<window background="0" fps="0" width="800" height="300"/>
 

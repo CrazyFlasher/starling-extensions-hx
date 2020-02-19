@@ -1,4 +1,3 @@
-package
 import openfl.display.StageAlign;
 import openfl.display.StageScaleMode;
 import openfl.display3D.Context3DRenderMode;
@@ -48,9 +47,10 @@ class Main extends openfl.display.Sprite
     {
         _assets = new AssetManager();
 
-        _assets.verbose = Capabilities.isDebugger;
+        _assets.verbose = true;
         _assets.enqueue([
-            Assets.getPath("assets/forest.jpg")
+            Assets.getPath("assets/starling.png"),
+            Assets.getPath("assets/mask.png"),
         ]);
         _assets.loadQueue(onComplete);
     }
