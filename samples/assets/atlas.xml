@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath='assets/pixelmask.png'>
+    <SubTexture name='mask_text0000' x='0' y='0' width='722' height='317' frameX='-70' frameY='0' frameWidth='862' frameHeight='317'/>
+    <SubTexture name='mask_text0001' x='0' y='317' width='722' height='295' frameX='-70' frameY='-11' frameWidth='862' frameHeight='317'/>
+    <SubTexture name='mask_text0002' x='0' y='612' width='722' height='271' frameX='-70' frameY='-23' frameWidth='862' frameHeight='317'/>
+    <SubTexture name='mask_text0003' x='0' y='883' width='722' height='247' frameX='-70' frameY='-35' frameWidth='862' frameHeight='317'/>
+    <SubTexture name='mask_text0004' x='0' y='1130' width='722' height='225' frameX='-70' frameY='-46' frameWidth='862' frameHeight='317'/>
+    <SubTexture name='mask_text0005' x='722' y='537' width='722' height='201' frameX='-70' frameY='-58' frameWidth='862' frameHeight='317'/>
+    <SubTexture name='mask_text0006' x='862' y='1454' width='722' height='179' frameX='-70' frameY='-69' frameWidth='862' frameHeight='317'/>
+    <SubTexture name='mask_text0007' x='862' y='1275' width='744' height='179' frameX='-59' frameY='-69' frameWidth='862' frameHeight='317'/>
+    <SubTexture name='mask_text0008' x='722' y='917' width='768' height='179' frameX='-47' frameY='-69' frameWidth='862' frameHeight='317'/>
+    <SubTexture name='mask_text0009' x='722' y='738' width='792' height='179' frameX='-35' frameY='-69' frameWidth='862' frameHeight='317'/>
+    <SubTexture name='mask_text0010' x='722' y='358' width='814' height='179' frameX='-24' frameY='-69' frameWidth='862' frameHeight='317'/>
+    <SubTexture name='mask_text0011' x='722' y='0' width='838' height='179' frameX='-12' frameY='-69' frameWidth='862' frameHeight='317'/>
+    <SubTexture name='mask_text0012' x='0' y='1355' width='862' height='179' frameX='0' frameY='-69' frameWidth='862' frameHeight='317'/>
+    <SubTexture name='mask_text0013' x='722' y='179' width='826' height='179' frameX='-18' frameY='-69' frameWidth='862' frameHeight='317'/>
+    <SubTexture name='mask_text0014' x='722' y='738' width='792' height='179' frameX='-35' frameY='-69' frameWidth='862' frameHeight='317'/>
+    <SubTexture name='mask_text0015' x='722' y='1096' width='756' height='179' frameX='-53' frameY='-69' frameWidth='862' frameHeight='317'/>
+    <SubTexture name='mask_text0016' x='862' y='1454' width='722' height='179' frameX='-71' frameY='-70' frameWidth='862' frameHeight='317'/>
+</TextureAtlas>

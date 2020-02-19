@@ -1,4 +1,4 @@
-package ;
+package
 import starling.events.KeyboardEvent;
 import openfl.geom.Point;
 import starling.events.Touch;

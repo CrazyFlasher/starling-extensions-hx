@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	
+	<meta title="Starling Extensions Demo" package="com.crazyflasher.starlingext.demo" version="1.0.0" company="OpenFL" />
+	<app main="Main" file="Main" path="bin" />
+	
+	<window background="0" fps="0" width="1800" height="1198"/>
+
+	<source path="samples/src" />
+	<source path="src" />
+
+	<haxelib name="starling" />
+	<haxelib name="openfl" />
+
+	<assets path="assets" embed="false" preload="false"/>
+
+</project>

@@ -1,4 +1,3 @@
-package ;
 import openfl.display.StageAlign;
 import openfl.display.StageScaleMode;
 import openfl.display3D.Context3DRenderMode;
