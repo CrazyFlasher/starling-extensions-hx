@@ -108,12 +108,14 @@ class LightStyle extends MeshStyle
 	/** @private */
 	override public function copyFrom(meshStyle:MeshStyle):Void
 	{
-		if (Std.is(meshStyle, LightStyle))
+		if (meshStyle != null && Std.is(meshStyle, LightStyle))
 		{
 			var litMeshStyle:LightStyle = cast (meshStyle, LightStyle);
 			_normalTexture = litMeshStyle._normalTexture;
 			_material.copyFrom(litMeshStyle._material);
 		}
+
+		super.copyFrom(meshStyle);
 	}
 
 	/** @private */
@@ -162,7 +164,7 @@ class LightStyle extends MeshStyle
 	{
 		var litMeshStyle:LightStyle;
 
-		if (Std.is(meshStyle, LightStyle))
+		if (meshStyle != null && Std.is(meshStyle, LightStyle))
 		{
 			litMeshStyle = cast (meshStyle, LightStyle);
 

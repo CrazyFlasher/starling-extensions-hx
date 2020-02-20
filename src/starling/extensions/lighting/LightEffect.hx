@@ -33,7 +33,7 @@ class LightEffect extends MeshEffect
 	public var normalTexture(get, set):Texture;
 
 	public static var VERTEX_FORMAT:VertexDataFormat =
-		Effect.VERTEX_FORMAT.extend(
+		MeshEffect.VERTEX_FORMAT.extend(
 			"normalTexCoords:float2, material:bytes4, xAxis:float2, yAxis:float2, zScale:float1"
 		);
 
@@ -349,7 +349,7 @@ class LightEffect extends MeshEffect
 				default: lightBit = 1;
 			}
 
-			lightBits |= lightBit << (i * 2);
+			lightBits = lightBits | lightBit << (i * 2);
 		}
 
 		return super.programVariantName | (normalMapBits << 8) | (lightBits << 16);
