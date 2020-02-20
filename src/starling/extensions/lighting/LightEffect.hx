@@ -41,7 +41,7 @@ class LightEffect extends MeshEffect
 	private var _normalTexture:Texture;
 	private var _cameraPosition:Vector3D;
 
-	private static var sVector:Vector<Float> = new Vector<Float>();
+	private static var sVector:Vector<Float> = new Vector<Float>(4, true);
 
 	public function new()
 	{

@@ -53,7 +53,7 @@ class LightStyle extends MeshStyle
 	public static var VERTEX_FORMAT:VertexDataFormat = LightEffect.VERTEX_FORMAT;
 
 	/** The highest supported value for 'shininess'. */
-	public static inline var MAX_SHININESS:Int = 32;
+	public static inline var MAX_SHININESS:Float = 32.0;
 
 	/** The maximum number of light sources that may be used. */
 	public static inline var MAX_NUM_LIGHTS:Int = 8;

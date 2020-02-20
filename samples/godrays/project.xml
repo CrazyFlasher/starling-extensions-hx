@@ -4,7 +4,8 @@
 	<meta title="Starling Extensions Demo" package="com.crazyflasher.starlingext.demo" version="1.0.0" company="OpenFL" />
 	<app main="Main" file="Main" path="../../export/godrays" />
 
-	<window background="0" fps="0" width="1800" height="1198"/>
+	<window background="0" fps="60" width="1800" height="1198"/>
+	<app swf-version="29" />
 
 	<source path="./" />
 	<source path="../../src" />
@@ -12,6 +13,7 @@
 	<haxelib name="starling" />
 	<haxelib name="openfl" />
 
-	<assets path="../assets" rename="assets" embed="true" preload="true"/>
+	<assets path="../assets" rename="assets" preload="true" embed="false"/>
+
 
 </project>
