@@ -40,6 +40,7 @@ class Main extends openfl.display.Sprite
             loadAssets(startGame);
         });
 
+		_starling.showStats = true;
         _starling.start();
     }
 
