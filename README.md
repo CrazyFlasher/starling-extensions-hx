@@ -2,6 +2,10 @@
 
 `haxelib install starling-extensions-hx`
 
+#### Dependencies
+**OpenFL** - https://github.com/openfl/openfl \
+**Starling** - https://github.com/openfl/starling
+
 * [Dynamic Lights](http://188.166.108.195/ext/dynamicLight/html5/bin/index.html)
 
 ![](http://188.166.108.195/ext/img/1.jpg)
@@ -21,5 +25,3 @@
 * [Wave Effect](http://188.166.108.195/ext/waveEffect/html5/bin/index.html)
 
 ![](http://188.166.108.195/ext/img/5.jpg)
-
-[Samples](http://188.166.108.195/ext/)
