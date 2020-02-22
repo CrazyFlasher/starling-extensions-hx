@@ -1,5 +1,7 @@
 # Starling OpenFL Extensions [![Build Status](https://travis-ci.org/CrazyFlasher/starling-extensions-hx.svg?branch=master)](https://travis-ci.org/CrazyFlasher/starling-extensions-hx)
 
+`haxelib install starling-extensions-hx`
+
 * [Dynamic Lights](http://188.166.108.195/ext/dynamicLight/html5/bin/index.html)
 
 ![](http://188.166.108.195/ext/img/1.jpg)

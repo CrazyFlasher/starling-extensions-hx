@@ -3,13 +3,13 @@
   "url": "https://github.com/CrazyFlasher/starling-extensions-hx",
   "license": "MIT",
   "tags": [
+    "starling", "openfl", "extensions"
   ],
   "description": "Starling Extensions",
-  "version": "0.0.1",
-  "releasenote": "Added God Rays effect",
+  "version": "1.0.0",
+  "releasenote": "Dynamic Lights, God Rays, Pixel Mask, Texture Mask",
   "contributors": [
-    "CrazyFlasher", 
-    "PrimaryFeather"
+    "CrazyFlasher"
   ],
   "classPath": "src",
   "dependencies": {
