@@ -1,0 +1,67 @@
+language: haxe
+
+# TravisCI by default run on linux.
+# Let's enable both linux and mac builds because why not?
+os:
+  - linux
+#  - osx
+
+dist: xenial
+
+# Test with Haxe 4.0.5.
+haxe:
+  - "4.0.5"
+
+neko: "2.3.0"
+
+matrix:
+  # Allow Haxe development to fail.
+  allow_failures:
+    - haxe: development
+
+addons:
+  # This is the preferred way to install apt packages.
+  # However, it only allow some but not all packages.
+  # Alternatively, we can use `sudo apt-get install ...` in the `install:` section.
+  # http://docs.travis-ci.com/user/apt/#Adding-APT-Packages
+  apt:
+    packages:
+      # C++ (for rebuilding hxcpp)
+      - gcc-multilib
+      - g++-multilib
+      # Python
+      - python3
+      # PHP
+      - php-cli
+      - php-mbstring
+      # C#
+      - mono-devel
+      - mono-mcs
+      # Flash
+      - libglib2.0
+      - libfreetype6
+      # Lua
+      - cmake
+      - lua5.1
+      - luarocks
+      - libpcre3-dev
+      - libssl-dev
+
+install:
+  # os-specific config
+  - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
+    export DISPLAY=:99.0;
+    export AUDIODEV=null;
+    elif [ "${TRAVIS_OS_NAME}" = "osx" ]; then
+    brew update;
+    brew cask uninstall oclint;
+    brew cask install phantomjs;
+    brew install mono;
+    brew upgrade python;
+    fi
+  # Install haxelibs
+  - haxelib install openfl 8.9.6
+  - haxelib install lime 7.7.0
+  - haxelib git starling https://github.com/openfl/starling.git 9bcb5b4a70a3be70961237eb2b1330b4a9012ecf
+script:
+  - haxe build_html5.hxml
