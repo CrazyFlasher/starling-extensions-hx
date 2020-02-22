@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
-
+	
 	<meta title="Starling Extensions Demo" package="com.crazyflasher.starlingext.demo" version="1.0.0" company="OpenFL" />
-	<app main="Main" file="Main" path="../../export/godrays" />
-
-	<window background="0" width="1800" height="1198"/>
+	<app main="Main" file="Main" path="../../export/waveEffect" />
+	
+	<window background="0" width="2560" height="1600"/>
 	<window fps="60" unless="html5"/>
 	<window fps="0" if="html5"/>
 	<app swf-version="29" if="flash"/>
@@ -16,6 +16,5 @@
 	<haxelib name="openfl" />
 
 	<assets path="../assets" rename="assets" preload="true" embed="false"/>
-
 
 </project>

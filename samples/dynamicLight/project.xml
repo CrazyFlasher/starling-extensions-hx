@@ -4,8 +4,10 @@
 	<meta title="Starling Extensions Demo" package="com.crazyflasher.starlingext.demo" version="1.0.0" company="OpenFL" />
 	<app main="Main" file="Main" path="../../export/dynamicLight" />
 	
-	<window background="0" fps="60" width="800" height="600"/>
-	<app swf-version="29" />
+	<window background="0" width="800" height="600"/>
+	<window fps="60" unless="html5"/>
+	<window fps="0" if="html5"/>
+	<app swf-version="29" if="flash"/>
 
 	<source path="./" />
 	<source path="../../src" />
