@@ -1,0 +1,18 @@
+-cmd cd samples/dynamicLight
+-cmd haxelib run openfl build html5 -release -no-traces -Dwebgl1
+
+-cmd cd ..
+-cmd cd godrays
+-cmd haxelib run openfl build html5 -release -no-traces -Dwebgl1
+
+-cmd cd ..
+-cmd cd pixelMask
+-cmd haxelib run openfl build html5 -release -no-traces -Dwebgl1
+
+-cmd cd ..
+-cmd cd textureMask
+-cmd haxelib run openfl build html5 -release -no-traces -Dwebgl1
+
+-cmd cd ..
+-cmd cd waveEffect
+-cmd haxelib run openfl build html5 -release -no-traces -Dwebgl1
