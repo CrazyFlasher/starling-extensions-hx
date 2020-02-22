@@ -1,3 +1,4 @@
+import openfl.geom.Rectangle;
 import starling.extensions.lighting.LightStyle;
 import openfl.geom.Point;
 import starling.events.Touch;
@@ -42,30 +43,39 @@ class Demo extends Sprite
 		var textures:Vector<Texture> = assets.getTextureAtlas("character").getTextures();
 		var normalTextures:Vector<Texture> = normalTextureAtlas.getTextures();
 
+		var bulbTextureAltas:Texture = assets.getTexture("lightbulbs");
+		var textureWidth:Float = bulbTextureAltas.width / 3;
+		var textureHeight:Float = bulbTextureAltas.height;
+
+		var pointLightTexture:Texture = Texture.fromTexture(bulbTextureAltas, new Rectangle(0, 0, textureWidth, textureHeight));
+		var ambientLightTexture:Texture = Texture.fromTexture(bulbTextureAltas, new Rectangle(textureWidth, 0, textureWidth, textureHeight));
+		var directionalLightTexture:Texture = Texture.fromTexture(bulbTextureAltas, new Rectangle(textureWidth * 2, 0, textureWidth,
+			textureHeight));
+
 		var ambientLight:LightSource = LightSource.createAmbientLight();
 		ambientLight.x = _stageWidth * 0.5;
 		ambientLight.y = _stageHeight * 0.2;
 		ambientLight.z = -150;
-		ambientLight.showLightBulb = true;
+		ambientLight.showLightBulb = ambientLightTexture;
 
 		var pointLightA:LightSource = LightSource.createPointLight(0x00ff00);
 		pointLightA.x = _stageWidth * 0.25;
 		pointLightA.y = _stageHeight * 0.2;
 		pointLightA.z = -150;
-		pointLightA.showLightBulb = true;
+		pointLightA.showLightBulb = pointLightTexture;
 
 		var pointLightB:LightSource = LightSource.createPointLight(0xff00ff);
 		pointLightB.x = _stageWidth * 0.75;
 		pointLightB.y = _stageHeight * 0.2;
 		pointLightB.z = -150;
-		pointLightB.showLightBulb = true;
+		pointLightB.showLightBulb = pointLightTexture;
 
 		var directionalLight:LightSource = LightSource.createDirectionalLight();
 		directionalLight.x = _stageWidth * 0.6;
 		directionalLight.y = _stageHeight * 0.3;
 		directionalLight.z = -150;
 		directionalLight.rotationY = -1.0;
-		directionalLight.showLightBulb = true;
+		directionalLight.showLightBulb = directionalLightTexture;
 
 		addMarchingCharacters(8, textures, normalTextures);
 		// addStaticCharacter(textures[0], normalTextures[0]);

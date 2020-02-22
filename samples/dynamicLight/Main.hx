@@ -49,6 +49,7 @@ class Main extends openfl.display.Sprite
 
         _assets.verbose = true;
         _assets.enqueue([
+            Assets.getPath("assets/lightbulbs.png"),
             Assets.getPath("assets/character.png"),
             Assets.getPath("assets/character_n.png"),
             Assets.getPath("assets/character.xml")

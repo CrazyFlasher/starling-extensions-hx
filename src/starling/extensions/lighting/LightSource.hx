@@ -12,7 +12,6 @@ package starling.extensions.lighting;
 
 import openfl.geom.Point;
 import openfl.geom.Rectangle;
-import starling.core.Starling;
 import starling.display.Image;
 import starling.display.Sprite3D;
 import starling.display.Stage;
@@ -51,21 +50,9 @@ import starling.textures.Texture;
  *  <p>A directional light defaults to shining in the direction of the positive x-axis.
  *  You can change the direction by modifying <code>rotationX/Y/Z</code> to your needs.</p>
  */
+
 class LightSource extends Sprite3D
 {
-	public var color(get, set):Int;
-	public var brightness(get, set):Float;
-	public var showLightBulb(get, set):Bool;
-	public var type(get, set):String;
-	public var isActive(get, set):Bool;
-
-	@:meta(Embed(source = "lightbulbs.png"))
-
-	private static var LightBulbAtlas:Class<Dynamic>;
-
-	private static var ATLAS_TEXTURE_DATA_NAME:String =
-	"starling.extensions.lighting.LightSource.atlasTexture";
-
 	/** Point lights emit radial light from a single spot. */
 	public static inline var TYPE_POINT:String = "point";
 
@@ -74,6 +61,12 @@ class LightSource extends Sprite3D
 
 	/** Directional lights emit parallel rays, which is ideal to simulate sunlight. */
 	public static inline var TYPE_DIRECTIONAL:String = "directional";
+
+	public var color(get, set):Int;
+	public var brightness(get, set):Float;
+	public var showLightBulb(get, set):Texture;
+	public var type(get, set):String;
+	public var isActive(get, set):Bool;
 
 	private var _type:String;
 	private var _color:UInt;
@@ -151,52 +144,6 @@ class LightSource extends Sprite3D
 		}
 	}
 
-	private static function drawBulb():Texture
-	{
-		var stage = openfl.Lib.application.window.stage;
-		var shape = new openfl.display.Shape();
-		shape.graphics.beginFill(0x00cc00, 0.5);
-		shape.graphics.drawCircle(5, 5, 5);
-		shape.graphics.endFill();
-		stage.addChild(shape);
-
-		var bd = new openfl.display.BitmapData(10, 10, true, 0);
-		bd.draw(shape);
-
-		stage.removeChild(shape);
-		shape.graphics.clear();
-
-		return Texture.fromBitmapData(bd);
-	}
-
-	private static function getBulbTexture(type:String):Texture
-	{
-		var atlasTexture:Texture = Starling.current.painter.sharedData[ATLAS_TEXTURE_DATA_NAME];
-		if (atlasTexture == null)
-		{
-			/*atlasTexture = Texture.fromEmbeddedAsset(LightBulbAtlas,
-													 false, false, 2, Context3DTextureFormat.BGRA_PACKED
-			);*/
-			atlasTexture = drawBulb();
-			Starling.current.painter.sharedData[ATLAS_TEXTURE_DATA_NAME] = atlasTexture;
-		}
-
-		sRegion.x = sRegion.y = 0;
-		sRegion.width = atlasTexture.width / 3;
-		sRegion.height = atlasTexture.height;
-
-		if (type == TYPE_AMBIENT)
-		{
-			sRegion.x = sRegion.width;
-		} else
-		if (type == TYPE_DIRECTIONAL)
-		{
-			sRegion.x = sRegion.width * 2;
-		}
-
-		return Texture.fromTexture(atlasTexture, sRegion);
-	}
-
 	/** The color of the light that's emitted by this light source. @default white */
 	private function get_color():UInt
 	{
@@ -252,29 +199,38 @@ class LightSource extends Sprite3D
      *  source, which is useful for debugging. The image can be moved around with the mouse or
      *  finger; use the shift button while dragging to change the 'z' and 'rotation'
      *  properties; double-tap to switch it on or off. @default false */
-	private function get_showLightBulb():Bool
+	private function get_showLightBulb():Texture
 	{
-		return (_lightBulb != null) ? _lightBulb.visible : false;
+		return _lightBulb.texture;
 	}
 
-	private function set_showLightBulb(value:Bool):Bool
+	private function set_showLightBulb(value:Texture):Texture
 	{
-		if (value == showLightBulb)
+		if (value == null)
 		{
-			return value;
-		}
-		if (_lightBulb == null)
+			if (_lightBulb != null)
+			{
+				_lightBulb.removeFromParent(true);
+				_lightBulb = null;
+			}
+		} else
 		{
-			_lightBulb = new Image(getBulbTexture(_type));
-			_lightBulb.alignPivot();
-			_lightBulb.color = _color;
-			_lightBulb.alpha = _brightness;
-			_lightBulb.useHandCursor = true;
+			if (_lightBulb != null)
+			{
+				_lightBulb.texture = value;
+			} else
+			{
+				_lightBulb = new Image(value);
+				_lightBulb.alignPivot();
+				_lightBulb.color = _color;
+				_lightBulb.alpha = _brightness;
+				_lightBulb.useHandCursor = true;
 
-			addChild(_lightBulb);
-			addEventListener(TouchEvent.TOUCH, onTouch);
+				addChild(_lightBulb);
+				addEventListener(TouchEvent.TOUCH, onTouch);
+			}
 		}
-		_lightBulb.visible = value;
+
 		return value;
 	}
 
@@ -287,16 +243,7 @@ class LightSource extends Sprite3D
 
 	private function set_type(value:String):String
 	{
-		if (_type != value)
-		{
-			_type = value;
-			if (_lightBulb != null)
-			{
-				_lightBulb.texture = getBulbTexture(value);
-			}
-			setRequiresRedraw();
-		}
-		return value;
+		return _type = value;
 	}
 
 	/** Indicates if light is emitted at all. @default true */

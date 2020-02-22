@@ -10,12 +10,11 @@
 
 package starling.extensions.lighting;
 
-import starling.rendering.Effect;
+import openfl.display3D.Context3D;
+import openfl.display3D.Context3DProgramType;
+import openfl.geom.Vector3D;
 import openfl.Vector;
 import starling.rendering.FilterEffect;
-import openfl.display3D.Context3DProgramType;
-import openfl.display3D.Context3D;
-import openfl.geom.Vector3D;
 import starling.rendering.MeshEffect;
 import starling.rendering.Program;
 import starling.rendering.VertexDataFormat;
@@ -134,12 +133,12 @@ class LightEffect extends MeshEffect
 			);
 		}
 
-		fragmentShader.push(
+		/*fragmentShader.push(
 			"m33 ft1.xyz, ft1.xyz, v5" // move N into local coords
 		);
 		fragmentShader.push(
 			"nrm ft1.xyz, ft1.xyz" // normalize N               ft1 = normal vector
-		);
+		);*/
 
 		var numLights:Int = Std.int(MathUtil.min(_lights.length, LightStyle.MAX_NUM_LIGHTS));
 
@@ -250,7 +249,6 @@ class LightEffect extends MeshEffect
 		fragmentShader.push(
 			"mov oc, ft6"
 		);
-
 
 		return Program.fromSource(vertexShader.join("\n"), fragmentShader.join("\n"));
 	}
