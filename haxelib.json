@@ -6,8 +6,8 @@
     "starling", "openfl", "extensions"
   ],
   "description": "Starling Extensions",
-  "version": "1.0.0",
-  "releasenote": "Dynamic Lights, God Rays, Pixel Mask, Texture Mask",
+  "version": "1.0.1",
+  "releasenote": "Fixed to work with -dce full",
   "contributors": [
     "CrazyFlasher"
   ],

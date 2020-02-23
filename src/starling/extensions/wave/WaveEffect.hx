@@ -7,6 +7,7 @@ import starling.animation.IAnimatable;
 import starling.rendering.FilterEffect;
 import starling.rendering.Program;
 
+@:keep
 class WaveEffect extends FilterEffect implements IAnimatable
 {
 	private var waveSources:Vector<WaveSource> = new Vector<WaveSource>();

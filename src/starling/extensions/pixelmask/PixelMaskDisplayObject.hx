@@ -14,6 +14,7 @@ import starling.rendering.Painter;
 import starling.textures.RenderTexture;
 import starling.utils.Pool;
 
+@:keep
 class PixelMaskDisplayObject extends DisplayObjectContainer
 {
 	public var isAnimated(get, set):Bool;

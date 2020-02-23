@@ -51,6 +51,7 @@ import starling.textures.Texture;
  *  You can change the direction by modifying <code>rotationX/Y/Z</code> to your needs.</p>
  */
 
+@:keep
 class LightSource extends Sprite3D
 {
 	/** Point lights emit radial light from a single spot. */

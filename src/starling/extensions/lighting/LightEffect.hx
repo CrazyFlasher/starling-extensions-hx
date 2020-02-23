@@ -25,6 +25,7 @@ import starling.utils.RenderUtil;
 import starling.utils.StringUtil;
 
 /** @private */
+@:keep
 class LightEffect extends MeshEffect
 {
 	public var numLights(get, set):Int;
@@ -426,7 +427,7 @@ class LightEffect extends MeshEffect
 	}
 }
 
-
+@:keep
 class Light
 {
 	public var x:Float;

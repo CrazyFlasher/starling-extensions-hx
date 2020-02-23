@@ -26,6 +26,8 @@ import starling.utils.MathUtil;
  *  to the class-specific properties, you can also assign an overall color or different colors
  *  per vertex.</p>
  */
+
+@:keep
 class GodRayPlane extends Quad implements IAnimatable
 {
     private var godRayStyle(get, never):GodRayStyle;
@@ -191,6 +193,7 @@ class GodRayPlane extends Quad implements IAnimatable
     }
 }
 
+@:keep
 class GodRayStyle extends MeshStyle
 {
     public var shear(get, set):Float;
@@ -292,6 +295,7 @@ class GodRayStyle extends MeshStyle
     }
 }
 
+@:keep
 class GodRayEffect extends MeshEffect
 {
     private static var sConstants:Vector<Float> = new Vector<Float>([0, 1, 2, 0.5]);

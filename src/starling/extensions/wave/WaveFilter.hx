@@ -4,6 +4,7 @@ import starling.animation.IAnimatable;
 import starling.filters.FragmentFilter;
 import starling.rendering.FilterEffect;
 
+@:keep
 class WaveFilter extends FragmentFilter implements IAnimatable
 {
 	private var waveEffect(get, never):WaveEffect;

@@ -42,6 +42,7 @@ import starling.utils.MatrixUtil;
  *
  *  @see LightSource
  */
+@:keep
 class LightStyle extends MeshStyle
 {
 	public var normalTexture(get, set):Texture;
@@ -500,7 +501,7 @@ class LightStyle extends MeshStyle
 	}
 }
 
-
+@:keep
 class Material
 {
 	public var ambientRatio:Float;

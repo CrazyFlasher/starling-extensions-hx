@@ -18,6 +18,7 @@ import starling.rendering.Program;
 import starling.rendering.VertexDataFormat;
 import starling.styles.MeshStyle;
 
+@:keep
 class TextureMaskStyle extends MeshStyle
 {
 	public var threshold(get, set):Float;
@@ -88,7 +89,7 @@ class TextureMaskStyle extends MeshStyle
 	}
 }
 
-
+@:keep
 class TextureMaskEffect extends MeshEffect
 {
 	public static var VERTEX_FORMAT:VertexDataFormat = TextureMaskStyle.VERTEX_FORMAT;

@@ -2,6 +2,7 @@ package starling.extensions.wave;
 
 import flash.geom.Point;
 
+@:keep
 class WaveSource
 {
 	public static inline var LINEAR:Int = 0;
